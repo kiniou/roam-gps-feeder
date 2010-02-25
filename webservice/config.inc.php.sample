@@ -1,0 +1,6 @@
+<?php 
+$db_user="your-user";
+$db_password="your-complicated-password-here";
+$db_base="geoloc";
+$db_table="trail";
+?>

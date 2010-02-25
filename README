@@ -1,0 +1,26 @@
+ROAM-GPS-FEEDER
+
+This is web service store GPS data in a MySQL database through simple PHP script.
+GPS data are fed by phone with an HTML5/CSS3 application (iPhone/Android) based on JQTouch.
+
+[> INSTALL
+You will need an Apache with PHP enabled and a MySQL database.
+
+Here is a little description of the directories:
+	* config-db : it contains sql script to create the 'trail' table which is used to record GPS coordinates coming from the geolocation javascript API.
+	* feeder-app : this is the application that sends GPS data to the feeder webservice.
+	* webservice : the PHP scripts for the webservice.
+		* query.php : script used by roam-gps-reader to query GPS data.
+		* service.php : script used by feeder-app to store GPS data.
+
+Import install_geoloc_db.sql into your MySQL database and create a user with access right to localhost.
+Install the feeder-app and webservice directories on your webserver then change the configuration files:
+* in webservice, copy config.inc.php.sample into config.inc.php then modify user and password accordingly to your MySQL setup.
+* in feeder-app, modify the first variable called feeder_url in geoloc.js to fit your webservice url.
+
+In order to install the feeder-app, launch your phone browser and type in the url of your feeder-app install then add it to your favorites (or dashboard on iphone)
+
+[> AUTHOR
+Kevin 'kiniou' Roy
+kiniou_AT_gmail_DOT_com
+http://blog.knokorpo.fr
